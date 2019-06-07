@@ -1,0 +1,240 @@
+body {/*
+  background: #fff url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgAQMAAABJtOi3AAAABlBMVEX4+Pj09PQf/c7fAAAAGklEQVR4Xq3MIQEAAADDIPqX/kvMIMEWEm8O7b0/wewc/NcAAAAASUVORK5CYII=) repeat;*/
+	width: device-width;
+}
+
+.block {
+  height: 30em;
+  line-height: 20em;
+  width:100%;
+  background: #464646;
+  color: #fdfdfd;
+  text-align: center;
+  margin: 1em auto;
+  text-shadow: 0 0 1px #333; /* so one can see fadeBgColor properly */
+}
+
+.animatable {
+  
+  /* initially hide animatable objects */
+  visibility: hidden;
+  
+  /* initially pause animatable objects their animations */ 
+  animation-play-state: paused; 
+}
+
+/* show objects being animated */
+.animate-in {
+  visibility: visible;
+  animation-fill-mode: both;
+  animation-duration: 1s;
+  animation-play-state: running;
+}
+
+.animate-out {
+  visibility: visible;
+  animation-fill-mode: both;
+  animation-duration: 1s;
+  animation-play-state: running;
+  animation-direction: reverse;
+}
+
+.animate-out:after {
+  content ''
+  letter-spacing: inherit;
+}
+
+/* CSS Animations (extracted from http://glifo.uiparade.com/) */
+
+@keyframes fadeInDown {
+	0% {
+		opacity: 0;
+		transform: translateY(-20px);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+
+@keyframes fadeIn {
+	0% {
+		opacity: 0;
+	}
+	60% {
+		opacity: 0;
+	}
+	20% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+@keyframes bounceInDown{
+	0% {
+		opacity: 0;
+		transform: translateY(-2000px);
+	}
+
+	60% {
+		transform: translateY(20px);
+	}
+
+	80% {
+		transform: translateY(-5px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+
+}
+
+@keyframes bounceInLeft {
+	0% {
+		opacity: 0;
+		transform: translateX(-2000px);
+	}
+
+	60% {
+		transform: translateX(20px);
+	}
+
+	80% {
+		transform: translateX(-5px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+@keyframes bounceInRight {
+	0% {
+		opacity: 0;
+		transform: translateX(2000px);
+	}
+
+	60% {
+		transform: translateX(-20px);
+	}
+
+	80% {
+		transform: translateX(5px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+@keyframes fadeInUp {
+	0% {
+		opacity: 0;
+		transform: translateY(20px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes bounceIn {
+	0% {
+		opacity: 0;
+		transform: scale(.3);
+	}
+
+	50% {
+		transform: scale(1.05);
+	}
+
+	70% {
+		transform: scale(.9);
+	}
+
+	100% {
+		opacity: 1;
+		transform: scale(1);
+	}
+}
+
+@keyframes moveUp {
+	0% {
+		opacity: 1;
+		transform: translateY(10px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+
+@keyframes fadeBgColor {
+	0%{
+		background:none;
+	}
+  70%{
+		background:none;
+	}
+	100%{
+		background:#464646;
+	}
+}
+
+.animate-in.animationDelay, .animate-out.animationDelay {
+	animation-delay:.4s;
+	-webkit-animation-delay:.4s;
+}
+.animate-in.animationDelayMed, .animate-out.animationDelayMed {
+	animation-delay:1.2s;
+	-webkit-animation-delay:1.2s;
+}
+.animate-in.animationDelayLong, .animate-out.animationDelayLong {
+	animation-delay:1.6s;
+	-webkit-animation-delay:1.6s;
+}
+.animate-in.fadeBgColor, .animate-out.fadeBgColor {
+
+	animation-name: fadeBgColor;
+}
+.animate-in.bounceIn, .animate-out.bounceIn {
+
+	animation-name: bounceIn;
+}
+.animate-in.bounceInRight, .animate-out.bounceInRight {
+
+	animation-name: bounceInRight;
+}
+.animate-in.bounceInLeft, .animate-out.bounceInLeft {
+
+	animation-name: bounceInLeft;
+}
+.animate-in.fadeIn, .animate-out.fadeIn {
+
+	animation-name: fadeIn;
+}
+.animate-in.fadeInDown, .animate-out.fadeInDown {
+
+	animation-name: fadeInDown;
+}
+.animate-in.bounceInDown,.animate-in.bounceInDown {
+	animation-name: bounceInDown;
+
+}
+.animate-in.fadeInUp, .animate-out.fadeInUp {
+
+	animation-name: fadeInUp;
+}
+.animate-in.moveUp, .animate-out.moveUp {
+	animation-name: moveUp;
+}
